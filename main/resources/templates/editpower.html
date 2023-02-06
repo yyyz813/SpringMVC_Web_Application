@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS to use in case of a failure to get our selected theme-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- Bootstrap CSS Neon Glow theme which will override the base theme referenced above -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/bootstrap4-neon-glow.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel='stylesheet' href='//cdn.jsdelivr.net/font-hack/2.020/css/hack.min.css'>
+
+    <title>Superhero Sightings</title>
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #6f42c1;
+             white-space: nowrap;
+        }
+
+        li {
+            display: inline-block;
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+        .active {
+            background-color: #4B0082;
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+<ul>
+    <li><a>
+        <button class="btn btn-outline-success " type="submit" style="color:black; box-shadow: 0 -2px 10px white; ">H</button>
+    </a></li>
+    <li><a href="heroes" style="padding-top: 30px">Heroes</a></li>
+    <li><a href="locations" style="padding-top: 30px">Locations</a></li>
+    <li><a href="organizations" style="padding-top: 30px">Organizations</a></li>
+    <li><a href="sighting" style="padding-top: 30px">Sightings</a></li>
+    <li><a href="superpowers" style="padding-top: 30px">Superpowers</a></li>
+</ul>
+
+<div class="container">
+
+
+    <!-- Form -->
+    <div class="row m-4 border border-dark">
+        <div class="col-3 text-center m-3">
+            <span class="h3">Edit Superpower</span>
+        </div>
+        <div class="col-7 text-center m-3">
+            <form action="editPower" method="POST">
+                <div class="form-group row">
+                    <label for="powerName" class="col-3 col-form-label">
+                      Superpower</label>
+                    <div class="col-9">
+                        <input type="text" name="powerName" id="powerName"
+                               class="form-control" th:value="${power.powerName}"/>
+                    </div>
+                </div>
+                <input type="hidden" name="id" th:value="${power.superpower_id}"/>
+                <button type="submit" class="btn btn-primary">
+                    Update Superpower</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Superhero Sightings</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="row m-4 border border-dark">-->
+<!--    <div class="col-3 text-center m-3">-->
+<!--        <span class="h3">Edit Superpower</span>-->
+<!--    </div>-->
+<!--    <div class="col-7 text-center m-3">-->
+<!--        <form action="editpower" method="POST">-->
+<!--            <div class="form-group row">-->
+<!--                <label for="powerName" class="col-3 col-form-label">-->
+<!--                    First Name</label>-->
+<!--                <div class="col-9">-->
+<!--                    <input type="text" name="id" id="id"-->
+<!--                           class="form-control" th:value="${superpower.superpower_id}" hiden/>-->
+<!--                </div>-->
+<!--                &lt;!&ndash;                    <div class="col-9">&ndash;&gt;-->
+<!--                &lt;!&ndash;                        <input type="text" name="powerName" id="power_id"&ndash;&gt;-->
+<!--                &lt;!&ndash;                               class="form-control" th:value="${superpower.powerName}"/>&ndash;&gt;-->
+<!--                &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">-->
+<!--                Update Teacher-->
+<!--            </button>-->
+<!--        </form>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--</body>-->
+<!--</html>-->
+
+
+
